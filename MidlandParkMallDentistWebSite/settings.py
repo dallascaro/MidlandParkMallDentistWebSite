@@ -23,13 +23,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-vou)a!)j)t=uqhqgt_7$l4$_lu81%h-1=0#&=c&0km983*eh@%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# Change this to False - once its a real website
 DEBUG = True
 
+# Domain names allowed
 ALLOWED_HOSTS = []
 
 
 # Application definition
-
+# this is where the pages will be for the website that is created
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -37,6 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Add any apps created here
+    # Personal Apps
+    'patients',
 ]
 
 MIDDLEWARE = [
@@ -48,9 +54,10 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+# This is how jango knows to route urls
 ROOT_URLCONF = 'MidlandParkMallDentistWebSite.urls'
-
+# Renders html templates, how are they stored, rendered. This is the html page
+# that will get rendered in django
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -67,13 +74,13 @@ TEMPLATES = [
         },
     },
 ]
-
+# how the server works
 WSGI_APPLICATION = 'MidlandParkMallDentistWebSite.wsgi.application'
 
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
+# Maps to databases has preinstalled sqlLite3
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -84,7 +91,7 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
-
+# validates password
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -117,7 +124,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
-
+# Where to store javascript, css files
 STATIC_URL = '/static/'
 
 # Default primary key field type
