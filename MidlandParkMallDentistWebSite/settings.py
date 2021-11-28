@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     # Add any apps created here
     # Personal Apps
     'patients',
+    'webpages',
 ]
 
 MIDDLEWARE = [
