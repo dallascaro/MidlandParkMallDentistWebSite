@@ -21,9 +21,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from webpages.views import homePage_view
+from webpages.views import homePage_view, servicesPage_view, appointmentsPage_view, patientsPage_view
 
 urlpatterns = [
     path('', homePage_view, name='home'),
+    path('services/', servicesPage_view),
+    path('appointments/', appointmentsPage_view),
+    path('patients/', patientsPage_view),
     path('admin/', admin.site.urls),
 ]

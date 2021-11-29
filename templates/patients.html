@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content_Patients %}
+   <h1>Patients Page</h1>
+    {{ request.user }}
+     {{ request.user.is_authenticated }}
+    <p>
+        Welcome to the Patients Page
+    </p>
+{% endblock %}
+
