@@ -11,12 +11,12 @@ def servicesPage_view(request,*args, **kwargs):
     #return HttpResponse("<h1>Services Page</h1>")
     return render(request, "services.html", {}) # returns html template
 
-# Another View (html page) for services
+# Another View (html page) for appointments
 def appointmentsPage_view(request,*args, **kwargs):
     #return HttpResponse("<h1>Appointments Page</h1>")
     return render(request, "appointments.html", {}) # returns html template
 
-# Another View (html page) for services
+# Another View (html page) for patients
 def patientsPage_view(request,*args, **kwargs):
     #return HttpResponse("<h1>Patients Page</h1>")
     return render(request, "patients.html", {}) # returns html template

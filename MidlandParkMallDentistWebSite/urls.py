@@ -25,8 +25,21 @@ from webpages.views import homePage_view, servicesPage_view, appointmentsPage_vi
 
 urlpatterns = [
     path('', homePage_view, name='home'),
+    path('home', homePage_view),
     path('services/', servicesPage_view),
     path('appointments/', appointmentsPage_view),
     path('patients/', patientsPage_view),
+    # From services view
+    path('services/home/', homePage_view),
+    path('services/appointments/', appointmentsPage_view),
+    path('services/patients/', patientsPage_view),
+    # From appointments view
+    path('appointments/home/', homePage_view),
+    path('appointments/services/', servicesPage_view),
+    path('appointments/patients/', patientsPage_view),
+    # From patients view
+    path('patients/home/', homePage_view),
+    path('patients/services/', servicesPage_view),
+    path('patients/appointments/', appointmentsPage_view),
     path('admin/', admin.site.urls),
 ]
