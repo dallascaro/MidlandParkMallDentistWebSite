@@ -22,6 +22,7 @@ from django.contrib import admin
 from django.urls import path
 
 from webpages.views import homePage_view, servicesPage_view, appointmentsPage_view, patientsPage_view
+from patients.views import patient_detail_view
 
 urlpatterns = [
     path('', homePage_view, name='home'),
@@ -29,6 +30,7 @@ urlpatterns = [
     path('services/', servicesPage_view),
     path('appointments/', appointmentsPage_view),
     path('patients/', patientsPage_view),
+    path('detials/', patient_detail_view),
     # From services view
     path('services/home/', homePage_view),
     path('services/appointments/', appointmentsPage_view),

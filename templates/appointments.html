@@ -1,9 +1,42 @@
 {% extends 'base.html' %}
 {% block content_Main %}
    <h1>Appointments Page</h1>
+    <h3>{{ type|capfirst|title }}</h3>
     <p>
         Welcome to the Appointments Page
     </p>
+
+    <p>
+    {{ type }}{{ day }}, {{ weekday }}, {{ month }}, {{ time }}
+    {{ patients_List }}
+    </p>
+
+    {{ testHtml|safe }}
+
+    <ul>
+        {% for patientAppointment in patients_List %}
+            {% if patientAppointment < 200 %}
+                <li>
+                    {{forloop.counter}}
+                    {{patientAppointment|add:100}}
+                </li>
+                {% elif patientAppointment > 300 %}
+                <li>
+                    {{forloop.counter}}
+                    {{patientAppointment|add:100}}
+                </li>
+            {% else %}
+                <li>
+                {{forloop.counter}}
+                {{patientAppointment}}
+                </li>
+            {% endif %}
+
+        {% endfor %}
+    </ul>
+
+
+
    {% include 'navbar.html' %}
 {% endblock %}
 
